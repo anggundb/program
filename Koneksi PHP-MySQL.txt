@@ -1,4 +1,4 @@
-filename: database.php
+filename: koneksi_php_mysql.php
 
 === Koneksi PHP dengan Mysql / Mariadb === 
 # mysql -u root -p123                                                                 ==> masuk database
