@@ -13,3 +13,5 @@ if ($db) {
 } else {
     echo "Database Error";
 }
+
+?>
