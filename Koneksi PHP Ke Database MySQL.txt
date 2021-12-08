@@ -1,0 +1,4 @@
+filename: database.php
+
+Referensi 
+https://mubatekno.com/cara-menghubungkan-koneksi-php-ke-database-mysql/
