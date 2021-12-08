@@ -1,0 +1,75 @@
+=== Backup Database MySQL lewat CLI ===
+- Login ke mysql
+  # mysql -u root -p123
+- Tampilkan database
+  MariaDB [(none)]> show databases;
+- Cek tabel di database
+  MariaDB [(none)]> use nama_database;
+  MariaDB [(none)]> use roundcube;
+  MariaDB [roundcube]> show tables;
+  MariaDB [roundcube]> exit;            # untuk keluar dari database
+- Backup database                       # untuk keamanan, berguna ketika migrasi server
+  # mysqldump -u username -p dbname > filename.sql
+  # mysqldump -u root -p roundcube > /home/cadangan/roundcube.sql
+  lalu masukkan password user root
+  hasil backup bisa dibuka menggunakan notepad
+
+=== Restore Database MySQL lewat CLI ===
+- Login ke mysql
+  # mysql -u root -p123
+- Tampilkan database
+  MariaDB [(none)]> show databases;
+- Hapus database
+  MariaDB [(none)]> drop database roundcube;
+  MariaDB [(none)]> show databases;     # cek apakah databasenya sudah terhapus
+  MariaDB [roundcube]> quit;            # untuk keluar dari database
+- Restore database
+  Ruangnya harus kita buat terlebih dahulu
+  # mysql -u root -p123
+  MariaDB [(none)]> create database roundcube;   # membuat ruang untuk database roundcube / database kosong 
+  MariaDB [(none)]> quit;
+  # mysql -u username -p dbname < filename.sql
+  # mysql -u root -p roundcube < /home/cadangan/roundcube.sql
+  # mysql -u root -p123                 # login lagi
+  MariaDB [(none)]> show databases;     # cek apakah databasenya sudah ditambahkan
+  MariaDB [(none)]> use roundcube;
+  MariaDB [roundcube]> show tables;     # cek apakah sudah ada tabelnya 
+  
+  
+=== User Database ===  
+MariaDB [(none)]> select user();
+  +----------------+
+  | user()         |
+  +----------------+
+  | root@localhost |
+  +----------------+
+  masuk sebagai root dari localhost
+
+
+=== Nomor Port Database ===  
+MariaDB [(none)]> SHOW VARIABLES WHERE Variable_name = 'port';
+  +---------------+-------+
+  | Variable_name | Value |
+  +---------------+-------+
+  | port          | 3306  |
+  +---------------+-------+
+
+
+=== Nama Host Database ===  
+MariaDB [(none)]> SHOW VARIABLES WHERE Variable_name = 'hostname';
+  +---------------+---------+
+  | Variable_name | Value   |
+  +---------------+---------+
+  | hostname      | belajar |
+  +---------------+---------+
+  
+  
+  
+  
+  
+  
+  
+  
+Referensi
+https://www.youtube.com/watch?v=w1y22Vo6LLE
+https://qastack.id/programming/4093603/how-do-i-find-out-my-mysql-url-host-port-and-username
