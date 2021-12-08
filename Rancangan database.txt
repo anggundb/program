@@ -1,0 +1,53 @@
+nama database : belajar
+tabel : siswa
+struktur:
+- id int(3)    ==> nama fieldnya id dengan type data integer yang ukurannya 3 digit, nilai yang bisa ditampung maksimal dari mulai 1-999
+- id int primary key auto_increment      ==> nama fieldnya id dengan type data integer yang ukurannya maksimal sesuai kapasitas penampungannya
+- nama varchar(100)
+- nis varchar(10)
+- email varchar(100)
+- jurusan varchar(100)
+- gambar varchar(100)
+
+=== Buat Database ===
+# mysql -u root -p123
+MariaDB [(none)]> create database belajar;                ==> muncul 'Query OK' berarti databasenya berhasil dibuat
+MariaDB [(none)]> show databases;                         ==> cek apakah databasenya sudah muncul
+MariaDB [(none)]> use belajar;                            ==> gunakan database belajar, muncul 'database changed' kalau berhasil
+MariaDB [(belajar)]> create table siswa (                 ==> membuat tabel mahasiswa
+                  -> id int primary key auto_increment,
+                  -> nama varchar(100),
+                  -> nis char(4),
+                  -> email varchar(100),
+                  -> jurusan varchar(100),
+                  -> gambar varchar(100)
+                  -> );
+kalau berhasil dibuat muncul tulisan 'Query OK'
+MariaDB [(belajar)]> show tables;                         ==> melihat tabel
+MariaDB [(belajar)]> describe siswa;                      ==> melihat strukturnya
+
+=== Input Data ke Database ===
+MariaDB [(belajar)]> insert into siswa values ('', 'anggun', '4151', 'anggundb@gmail.com', 'teknik komputer dan jaringan', 'anggun.jpg');                 
+kalau berhasil, muncul 'Query OK'
+MariaDB [(belajar)]> select * from siswa;                                  ==> melihat data yang sudah kita inputkan ke tabel
+MariaDB [(belajar)]> select nis from siswa;                                ==> menampilkan NIS nya saja
+MariaDB [(belajar)]> select nama, nis from siswa;                          ==> menampilkan nama dan NIS nya saja
+MariaDB [(belajar)]> select * from siswa where nis = '4151';               ==> cari siswa yang nis nya 4151
+
+=== Mengubah Data di Database ===
+MariaDB [(belajar)]> update siswa set jurusan = 'Desain Komunikasi Visual' where id = 2;
+MariaDB [(belajar)]> select * from siswa;               
+
+=== Menghapus Data di Database ===
+MariaDB [(belajar)]> delete from siswa where id = 2;
+MariaDB [(belajar)]> select * from siswa;
+MariaDB [(belajar)]> drop table siswa;                            ==> menghapus tabel siswa
+MariaDB [(belajar)]> drop database belajar;                       ==> menghapus database belajar
+
+Istilahnya CRUD (Create Read Update dan Delete)
+
+
+
+
+Referensi
+https://www.youtube.com/watch?v=fxe6qev-bno&list=PLFIM0718LjIUqXfmEIBE3-uzERZPh3vp6&index=10
