@@ -1,4 +1,35 @@
 filename: database.php
 
+=== Koneksi PHP dengan Mysql / Mariadb === 
+# mysql -u root -p123                                                                 ==> masuk database
+MariaDB [(none)]> CREATE DATABASE koneksi;                                            ==> membuat database
+MariaDB [(none)]> CREATE USER 'NAMA_USER'@'%' IDENTIFIED BY 'PASSWORD_USER';          ==> membuat user baru
+MariaDB [(none)]> CREATE USER 'anggun'@'%' IDENTIFIED BY '123'; 
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'NAMA_USER'@'%' WITH GRANT OPTION;   ==> beri hak akses database yang kita buat tadi ke user yang kita 
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'anggun'@'%' WITH GRANT OPTION;
+tekan (ctrl + c) untuk keluar database
+
+Buat file database dengan nama : database.php
+  <?php 
+  if (!mysqli_connect('localhost', 'USER_ANDA', 'PASSWORD_ANDA', 'mysql')) { 
+   die('Koneksi gagal: ' . mysqli_connect_error()); 
+  }
+  echo 'Koneksi berhasil';
+  ?>
+
+Ubah menjadi
+  <?php 
+  if (!mysqli_connect('localhost', 'anggun', '123', 'koneksi')) { 
+   die('Koneksi gagal: ' . mysqli_connect_error()); 
+  }
+  echo 'Koneksi berhasil';
+  ?>
+
+Pengujian di browser 
+ketik http://ALAMAT_IP_SERVER/database.php
+pastikan muncul : Koneksi berhasil
+
+
+
 Referensi 
-https://mubatekno.com/cara-menghubungkan-koneksi-php-ke-database-mysql/
+https://medium.com/tekaje-id/belajar-debian-10-membuat-web-server-dengan-apache-mysql-dan-php-68cd779701d0
