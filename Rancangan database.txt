@@ -27,7 +27,7 @@ MariaDB [(belajar)]> show tables;                         ==> melihat tabel
 MariaDB [(belajar)]> describe siswa;                      ==> melihat strukturnya
 
 === Input Data ke Database ===
-MariaDB [(belajar)]> insert into siswa values ('', 'anggun', '4151', 'anggundb@gmail.com', 'teknik komputer dan jaringan', 'anggun.jpg');                 
+MariaDB [(belajar)]> insert into siswa values ('1', 'anggun', '4151', 'anggundb@gmail.com', 'teknik komputer dan jaringan', 'anggun.jpg');                 
 kalau berhasil, muncul 'Query OK'
 MariaDB [(belajar)]> select * from siswa;                                  ==> melihat data yang sudah kita inputkan ke tabel
 MariaDB [(belajar)]> select nis from siswa;                                ==> menampilkan NIS nya saja
