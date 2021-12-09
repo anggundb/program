@@ -3,6 +3,11 @@ Untuk menghubungkan halaman web (php) dengan mysql dapat menggunakan:
 - Ekstensi MySQLi (improve/diperbaiki)
 - PDO (PHP Data Object) => bisa terhubung ke banyak database
 
+fileOK : functions.php
+         index.php
+
+rancang : index2.php
+
 
 Referensi
 https://www.youtube.com/watch?v=gvkr2V-JULE&list=PLFIM0718LjIUqXfmEIBE3-uzERZPh3vp6&index=11
