@@ -4,8 +4,13 @@ http://ip-server/login/index.php
       - index.php  ---> ../config.php
                    ---> lib.php
                    
-Fungsi include()                   
-                   
+Fungsi include() dan require() adalah suatu perintah atau fungsi di dalam pemrograman PHP untuk menyisipkan sebuah file PHP ke dalam file PHP yang lainnya.    
+Fungsi include_one() dan require_once() : penyisipan hanya dipanggil sekali saja
+Fungsi include() dan require() : jika disisipkan beberapa kali pada sebuah file maka akan menyebabkan error/redeclare (deklarasi ganda). 
+
+                   https://docs.moodle.org/311/en/Header_and_footer
+                   https://www.youtube.com/watch?v=heDZ3dNopHM
+                   https://moodle.org/mod/forum/discuss.php?d=314851
                    
                    
                    
