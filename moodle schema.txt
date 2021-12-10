@@ -11,7 +11,7 @@ Fungsi include() dan require() : jika disisipkan beberapa kali pada sebuah file 
                    https://docs.moodle.org/311/en/Header_and_footer
                    https://www.youtube.com/watch?v=heDZ3dNopHM
                    https://moodle.org/mod/forum/discuss.php?d=314851
-                   
+                   https://docs.moodle.org/dev/Moodle_Mobile_1_Developing_a_plugin_tutorial
                    
                    
                    
