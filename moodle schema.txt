@@ -13,7 +13,7 @@ Fungsi include() dan require() : jika disisipkan beberapa kali pada sebuah file 
                    https://moodle.org/mod/forum/discuss.php?d=314851
                    https://docs.moodle.org/dev/Moodle_Mobile_1_Developing_a_plugin_tutorial
                    https://docs.moodle.org/dev/Tutorial
-                   
+                   https://www.udemy.com/course/how-to-create-a-plugin-for-moodle-using-php/
                    
                    
                    
