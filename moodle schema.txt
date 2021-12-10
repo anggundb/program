@@ -1,0 +1,15 @@
+Halaman awal :
+http://ip-server/login/index.php
+=> login:
+      - index.php  ---> ../config.php
+                   ---> lib.php
+                   
+Fungsi include()                   
+                   
+                   
+                   
+                   
+                   
+                   
+Referensi
+https://www.malasngoding.com/belajar-php-mengenal-include-dan-require-pada-php/
