@@ -16,6 +16,13 @@ Fungsi include() dan require() : jika disisipkan beberapa kali pada sebuah file 
                    https://www.udemy.com/course/how-to-create-a-plugin-for-moodle-using-php/
                    
                    
+root@sudar:/var/www/html/local# ls -l
+total 20
+-rwxrwxrwx 1 root root 12371 Mar 13  2021 readme.txt
+-rwxrwxrwx 1 root root   806 Mar 13  2021 upgrade.txt
+root@sudar:/var/www/html/local#
+                   
+                   
                    
 Referensi
 https://www.malasngoding.com/belajar-php-mengenal-include-dan-require-pada-php/
