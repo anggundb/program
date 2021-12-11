@@ -22,6 +22,95 @@ total 20
 -rwxrwxrwx 1 root root   806 Mar 13  2021 upgrade.txt
 root@sudar:/var/www/html/local#
                    
+                   https://bbooks.info/viewmore/moodle-extension-development
+                   https://subscription.packtpub.com/book/hardware-and-creative/9781847194244/1/ch01lvl1sec02/directory-and-system-structure
+                   
+                   http://localhost/moodle/install.php   ==> pertama kali menjalankan di browser/install
+                   Confirm paths
+                   Web address
+The full address where Moodle will be accessed i.e. the address that users will enter into the address bar of their browser to access Moodle.
+
+It is not possible to access Moodle using multiple addresses. If your site is accessible via multiple addresses then choose the easiest one and set up a permanent redirect for each of the other addresses.
+
+If your site is accessible both from the Internet, and from an internal network (sometimes called an Intranet), then use the public address here.
+
+If the current address is not correct, please change the URL in your browser's address bar and restart the installation.
+
+Moodle directory
+The full path to the directory containing the Moodle code.
+
+Data directory
+A directory where Moodle will store all file content uploaded by users.
+
+This directory should be both readable and writeable by the web server user (usually 'www-data', 'nobody', or 'apache').
+
+It must not be directly accessible over the web.
+
+If the directory does not currently exist, the installation process will attempt to create it.
+
+Web address
+http://localhost/moodle
+Moodle directory
+C:\xampp\htdocs\moodle
+Data directory
+C:\xampp\moodledata
+
+Choose database driver
+Type : MariaDB (native/mariadb)
+
+
+
+Database settings
+mproved MySQL (native/mysqli)
+The database is where most of the Moodle settings and data are stored and must be configured here.
+
+The database name, username, and password are required fields; table prefix is optional.
+
+The database name may contain only alphanumeric characters, dollar ($) and underscore (_).
+
+If the database currently does not exist, and the user you specify has permission, Moodle will attempt to create a new database with the correct permissions and settings.
+
+Database host
+localhost
+Database name
+moodle
+Database user
+root
+Database password : kosong
+Tables prefix
+mdl_
+Database port
+
+
+                   http://localhost/moodle/admin/index.php?lang=en
+                   Installation >> confirm
+                   
+                   
+=== Menambahkan Tulisan Di Header Dan Footer Halaman Login Moodle ===
+login moodle : http://ip-server/login/index.php
+- Buka file index.php menggunakan nano /var/www/html/login/index.php
+- Lalu matikan perintah echo $OUTPUT->footer(); dengan memberi tanda // didepannya 
+- Tambahkan echo "<h1><b><center>TULISAN</center></b></h1>"; dibawahnya
+file:
+$PAGE->set_heading("$site->fullname");
+
+echo $OUTPUT->header();
+
+if (isloggedin() and !isguestuser()) {
+    // prevent logging when already logged in, we do not want them to relogin by accident because sesskey would be chan$    echo $OUTPUT->box_start();
+    $logout = new single_button(new moodle_url('/login/logout.php', array('sesskey'=>sesskey(),'loginpage'=>1)), get_st$    $continue = new single_button(new moodle_url('/'), get_string('cancel'), 'get');
+    echo $OUTPUT->confirm(get_string('alreadyloggedin', 'error', fullname($USER)), $logout, $continue);
+    echo $OUTPUT->box_end();
+} else {
+    $loginform = new \core_auth\output\login($authsequence, $frm->username);
+    $loginform->set_error($errormsg);
+    echo $OUTPUT->render($loginform);
+}
+
+//echo $OUTPUT->footer();
+echo "<h1><b><center>PENILAIAN AKHIR SEMESTER</center></b></h1>";
+echo "<h1><b><center>Tahun Pelajaran 2021/2022</center></b></h1>";
+
                    
                    
 Referensi
