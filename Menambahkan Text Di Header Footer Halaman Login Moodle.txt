@@ -22,3 +22,37 @@ if (isloggedin() and !isguestuser()) {
 //echo $OUTPUT->footer();
 echo "<h1><b><center>PENILAIAN AKHIR SEMESTER</center></b></h1>";
 echo "<h1><b><center>Tahun Pelajaran 2021/2022</center></b></h1>";
+
+
+
+
+=== Eksperimen ===
+variabel php
+$OUTPUT
+
+https://stackoverflow.com/questions/14037290/what-does-this-mean-in-php-or
+https://www.php.net/manual/en/language.oop5.properties.php
+access a property or method of an object php
+https://www.youtube.com/watch?v=bKCRpLmEduI ---poperti
+https://www.quora.com/What-does-the-symbol-mean-in-PHP
+
+warna background asli: #0f6fc5
+warna ganti #440fc5
+
+secara default theme moodle ada : classic dan bost 
+yang dipakai sekarang yang bost (default)
+file css nya ada direktory theme > bost> style > moodle.css
+cari btn-primary untuk mengganti style tombol login
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+  background-color: blueviolet; }
+
+
+
+form html ada di direktori template
+file nya ada direktory theme > bost> template > mustache
+https://docs.moodle.org/dev/Using_images_in_a_theme
+https://docs.moodle.org/dev/Templates
+file mustache di render di php
