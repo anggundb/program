@@ -1,0 +1,24 @@
+=== Menambahkan Tulisan Di Header Dan Footer Halaman Login Moodle ===
+login moodle : http://ip-server/login/index.php
+- Buka file index.php menggunakan nano /var/www/html/login/index.php
+- Lalu matikan perintah echo $OUTPUT->footer(); dengan memberi tanda // didepannya 
+- Tambahkan echo "<h1><b><center>TULISAN</center></b></h1>"; dibawahnya
+file:
+$PAGE->set_heading("$site->fullname");
+
+echo $OUTPUT->header();
+
+if (isloggedin() and !isguestuser()) {
+    // prevent logging when already logged in, we do not want them to relogin by accident because sesskey would be chan$    echo $OUTPUT->box_start();
+    $logout = new single_button(new moodle_url('/login/logout.php', array('sesskey'=>sesskey(),'loginpage'=>1)), get_st$    $continue = new single_button(new moodle_url('/'), get_string('cancel'), 'get');
+    echo $OUTPUT->confirm(get_string('alreadyloggedin', 'error', fullname($USER)), $logout, $continue);
+    echo $OUTPUT->box_end();
+} else {
+    $loginform = new \core_auth\output\login($authsequence, $frm->username);
+    $loginform->set_error($errormsg);
+    echo $OUTPUT->render($loginform);
+}
+
+//echo $OUTPUT->footer();
+echo "<h1><b><center>PENILAIAN AKHIR SEMESTER</center></b></h1>";
+echo "<h1><b><center>Tahun Pelajaran 2021/2022</center></b></h1>";
